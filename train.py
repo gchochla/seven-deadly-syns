@@ -8,18 +8,23 @@ random.seed(None)
 
 LEVELS = [0, 1]
 
-BUNCHES = []
-txtre = re.compile(r'essential-words-\d+.txt')
-for (dirpath, dirnames, filenames) in walk('./essential-words'):
-    for filename in filenames:
-        mo = txtre.search(filename)
-        if mo:
-            BUNCHES.append(int(mo.group().split('-')[-1].split('.')[0]))
+def get_default_bunches():
+    bunches = []
+    txtre = re.compile(r'essential-words-\d+.txt')
+    for (dirpath, dirnames, filenames) in walk('./essential-words'):
+        for filename in filenames:
+            mo = txtre.search(filename)
+            if mo:
+                bunches.append(int(mo.group().split('-')[-1].split('.')[0]))
+    return bunches
+
+BUNCHES = get_default_bunches()
 
 parser = argparse.ArgumentParser(description='Choose level and word bunches.')
 parser.add_argument(
     'bunches', metavar='bunch', type=int, nargs='*', default=BUNCHES,
-    help='Choose `essential-words-{bunch}.txt` files to incorporate. Default: all'
+    help='Choose `essential-words-{bunch}.txt` files to incorporate. Include -1 for last.' + \
+    ' Default: all'
 )
 parser.add_argument(
     '--lvl', dest='level', type=int, default=LEVELS[-1], choices=LEVELS,
@@ -28,6 +33,13 @@ parser.add_argument(
 parser.add_argument(
     '--edit', dest='edit_dst', type=int, default=2,
     help='Edit distance to be forgiven. Default: 2'
+)
+parser.add_argument(
+    '--extra', dest='extra_fins', type=str, nargs='*', default=[],
+    help='Include arbitrarily named files, relative to `essential-words` dir'
+)
+parser.add_argument(
+    '--dis', action='store_true', help='Exclude all `essential-words-#.txt` files'
 )
 
 def pr_red(skk, **kwargs): print(f'\033[91m{skk}\033[00m', **kwargs) 
@@ -139,12 +151,21 @@ if __name__ == '__main__':
     args = parser.parse_args()
     words = {}
     translation = {}
-    for txt in [f'essential-words/essential-words-{i}.txt' for i in args.bunches]:
+
+    if args.dis:
+        bunches = []
+    else:
+        bunches = args.bunches
+
+    for txt in [f'essential-words/essential-words-{i if i != -1 else BUNCHES[-1]}.txt' for i in bunches] \
+        + [f'essential-words/{fin}' for fin in args.extra_fins]:
         with open(txt) as txtf:
             for line in txtf.readlines():
                 line = line.split('=')
                 words[line[0]] = line[2][:-1].split(',') # [:-1] to remove '\n'
                 translation[line[0]] = line[1]
+    if len(words) == 0:
+        raise ValueError('No words were found, try reading the help message (-h)') 
     print('Press `Ctrl+C` to exit.\n')
     kwargs = {'edit_dst': args.edit_dst}
     game(words, translation, args.level, **kwargs)
