@@ -4,6 +4,8 @@ import random
 from os import walk
 from heapq import nlargest
 
+random.seed(None)
+
 LEVELS = [0, 1]
 
 BUNCHES = []
@@ -23,6 +25,10 @@ parser.add_argument(
     '--lvl', dest='level', type=int, default=LEVELS[-1], choices=LEVELS,
     help='Difficulty choice, ascending. Default: max difficulty'
 )
+parser.add_argument(
+    '--edit', dest='edit_dst', type=int, default=2,
+    help='Edit distance to be forgiven. Default: 2'
+)
 
 def pr_red(skk, **kwargs): print(f'\033[91m{skk}\033[00m', **kwargs) 
 def pr_green(skk, **kwargs): print(f'\033[92m{skk}\033[00m', **kwargs)
@@ -34,13 +40,13 @@ def sample_from_iterable(it, k):
 def shuffle_iterable(it):
     return sample_from_iterable(it, len(it))
 
-def game(words, level):
+def game(words, translation, level, **kwargs):
     games = [game_easy, game_hard]
     if len(games) != len(LEVELS):
         raise NotImplementedError('Correct `LEVELS` variable.')
-    games[level](words)
+    games[level](words, translation, **kwargs)
 
-def game_easy(words):
+def game_easy(words, translation, **kwargs):
     synonyms_presented = 5
     total = 0
     correct = 0
@@ -78,7 +84,8 @@ def game_easy(words):
                 correct += 1
             else:
                 pr_red('Incorrect answer!')
-            print(f'`{random_word}`\'s possible synonyms are {", ".join(words[random_word])}.\n')
+            pr_yellow(random_word, end=''); print(f'\'s translation is: {translation[random_word]}.')
+            pr_yellow(random_word, end=''); print(f'\'s possible synonyms are {", ".join(words[random_word])}.\n')
 
     except KeyboardInterrupt:
         print('\b\b  ') # remove ^C from screen
@@ -100,7 +107,8 @@ def edit_distance(s1, s2):
         distances = distances_
     return distances[-1]
 
-def game_hard(words):
+def game_hard(words, translation, **kwargs):
+    edit_dst = kwargs['edit_dst']
     total = 0
     correct = 0
     try:
@@ -112,14 +120,15 @@ def game_hard(words):
             total += 1
             prev = correct
             for synonym in words[random_word]:
-                if edit_distance(synonym, answer) <= 2:
+                if edit_distance(synonym, answer) <= edit_dst:
                     pr_green('Correct answer!')
                     correct += 1
                     break
             if prev == correct:
                 pr_red('Wrong answer!')
 
-            print(f'`{random_word}`\'s possible synonyms are {", ".join(words[random_word])}.\n')
+            pr_yellow(random_word, end=''); print(f'\'s translation is: {translation[random_word]}.')
+            pr_yellow(random_word, end=''); print(f'\'s possible synonyms are {", ".join(words[random_word])}.\n')
 
     except KeyboardInterrupt:
         print('\b\b  ') # remove ^C from screen
@@ -129,10 +138,13 @@ def game_hard(words):
 if __name__ == '__main__':
     args = parser.parse_args()
     words = {}
+    translation = {}
     for txt in [f'essential-words/essential-words-{i}.txt' for i in args.bunches]:
         with open(txt) as txtf:
             for line in txtf.readlines():
                 line = line.split('=')
-                words[line[0]] = line[1][:-1].split(',') # [:-1] to remove '\n'
+                words[line[0]] = line[2][:-1].split(',') # [:-1] to remove '\n'
+                translation[line[0]] = line[1]
     print('Press `Ctrl+C` to exit.\n')
-    game(words, args.level)
+    kwargs = {'edit_dst': args.edit_dst}
+    game(words, translation, args.level, **kwargs)

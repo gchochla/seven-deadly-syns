@@ -6,17 +6,18 @@ Simple game to help memorize GRE essential words.
 
 ```bash
 $ python3 game.py -h
-usage: game.py [-h] [--lvl {0,1}] [bunch [bunch ...]]
+usage: game.py [-h] [--lvl {0,1}] [--edit EDIT_DST] [bunch [bunch ...]]
 
 Choose level and word bunches.
 
 positional arguments:
-  bunch        Choose `essential-words-#.txt` files to incorporate. Default:
-               all
+  bunch            Choose `essential-words-#.txt` files to incorporate.
+                   Default: all
 
 optional arguments:
-  -h, --help   show this help message and exit
-  --lvl {0,1}  Difficulty choice, ascending. Default: max difficulty
+  -h, --help       show this help message and exit
+  --lvl {0,1}      Difficulty choice, ascending. Default: max difficulty
+  --edit EDIT_DST  Edit distance to be forgiven. Default: 2
 $ python3 game.py --lvl 0
 Press `Ctrl+C` to exit.
 
@@ -27,11 +28,12 @@ Choose synonym of `alleviate`:
 3. equivocal
 4. reduce
 
-Answer: 
+Answer:
 ```
 
 ## Extensions
 
 To incorporate your own words, add a file named `essential-words-#.txt`
 with your own words in the `essential-words` directory, where `#` is a natural number.
-The format of these txts is: `word-of-interest=synonyms`, where `synonyms=synonym[,synonyms]` and `synonym` can be any string.
+The format of these txts is: `word-of-interest=translation=synonyms`, where `synonyms=synonym[,synonyms]`
+and `synonym`, `translation` can be any string that does not contain `=`.
