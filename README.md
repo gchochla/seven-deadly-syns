@@ -1,11 +1,11 @@
 # GRE Essential Words
 
-Simple game to help memorize GRE essential words.
+Simple gamified training to help memorize GRE essential words.
 
 ## Usage
 
 ```bash
-$ python3 game.py -h
+$ python3 train.py -h
 usage: game.py [-h] [--lvl {0,1}] [--edit EDIT_DST] [bunch [bunch ...]]
 
 Choose level and word bunches.
