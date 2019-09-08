@@ -19,7 +19,7 @@ for (dirpath, dirnames, filenames) in walk('./essential-words'):
 parser = argparse.ArgumentParser(description='Choose level and word bunches.')
 parser.add_argument(
     'bunches', metavar='bunch', type=int, nargs='*', default=BUNCHES,
-    help='Choose `essential-words-#.txt` files to incorporate. Default: all'
+    help='Choose `essential-words-{bunch}.txt` files to incorporate. Default: all'
 )
 parser.add_argument(
     '--lvl', dest='level', type=int, default=LEVELS[-1], choices=LEVELS,
