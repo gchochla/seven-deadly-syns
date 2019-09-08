@@ -6,7 +6,7 @@ from heapq import nlargest
 
 random.seed(None)
 
-LEVELS = [0, 1]
+LEVELS = ['choice', 'fill']
 
 def get_default_bunches():
     bunches = []
@@ -20,15 +20,15 @@ def get_default_bunches():
 
 BUNCHES = get_default_bunches()
 
-parser = argparse.ArgumentParser(description='Choose level and word bunches.')
+parser = argparse.ArgumentParser(description='Choose game and word bunches.')
 parser.add_argument(
     'bunches', metavar='bunch', type=int, nargs='*', default=BUNCHES,
     help='Choose `essential-words-{bunch}.txt` files to incorporate. Include -1 for last.' + \
     ' Default: all'
 )
 parser.add_argument(
-    '--lvl', dest='level', type=int, default=LEVELS[-1], choices=LEVELS,
-    help='Difficulty choice, ascending. Default: max difficulty'
+    '--type', type=str, default=LEVELS[-1], choices=LEVELS,
+    help='Choose type of game. Default: fill blanks'
 )
 parser.add_argument(
     '--edit', dest='edit_dst', type=int, default=2,
@@ -52,13 +52,10 @@ def sample_from_iterable(it, k):
 def shuffle_iterable(it):
     return sample_from_iterable(it, len(it))
 
-def game(words, translation, level, **kwargs):
-    games = [game_easy, game_hard]
-    if len(games) != len(LEVELS):
-        raise NotImplementedError('Correct `LEVELS` variable.')
-    games[level](words, translation, **kwargs)
+def game(words, translation, type, **kwargs):
+    globals()[type](words, translation, **kwargs)
 
-def game_easy(words, translation, **kwargs):
+def choice(words, translation, **kwargs):
     synonyms_presented = 5
     total = 0
     correct = 0
@@ -119,7 +116,7 @@ def edit_distance(s1, s2):
         distances = distances_
     return distances[-1]
 
-def game_hard(words, translation, **kwargs):
+def fill(words, translation, **kwargs):
     edit_dst = kwargs['edit_dst']
     total = 0
     correct = 0
@@ -168,4 +165,4 @@ if __name__ == '__main__':
         raise ValueError('No words were found, try reading the help message (-h)') 
     print('Press `Ctrl+C` to exit.\n')
     kwargs = {'edit_dst': args.edit_dst}
-    game(words, translation, args.level, **kwargs)
+    game(words, translation, args.type, **kwargs)

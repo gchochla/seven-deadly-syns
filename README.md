@@ -6,11 +6,11 @@ Simple gamified training to help memorize GRE essential words.
 
 ```bash
 $ python3 train.py -h
-usage: train.py [-h] [--lvl {0,1}] [--edit EDIT_DST]
+usage: train.py [-h] [--type {choice,fill}] [--edit EDIT_DST]
                 [--extra [EXTRA_FINS [EXTRA_FINS ...]]] [--dis]
                 [bunch [bunch ...]]
 
-Choose level and word bunches.
+Choose game and word bunches.
 
 positional arguments:
   bunch                 Choose `essential-words-{bunch}.txt` files to
@@ -18,13 +18,13 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --lvl {0,1}           Difficulty choice, ascending. Default: max difficulty
+  --type {choice,fill}  Choose type of game. Default: fill blanks
   --edit EDIT_DST       Edit distance to be forgiven. Default: 2
   --extra [EXTRA_FINS [EXTRA_FINS ...]]
                         Include arbitrarily named files, relative to
                         `essential-words` dir
   --dis                 Exclude all `essential-words-#.txt` files
-$ python3 game.py --lvl 0 -1 # -1 refers to bunches
+$ python3 train.py --type choice -1 # -1 refers to bunches
 Press `Ctrl+C` to exit.
 
 Choose synonym of `alleviate`:
