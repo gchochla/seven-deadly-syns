@@ -7,7 +7,7 @@ Simple gamified training to help memorize GRE essential words.
 ```bash
 $ python3 train.py -h
 usage: train.py [-h] [--type {choice,fill}] [--edit EDIT_DST]
-                [--extra [EXTRA_FINS [EXTRA_FINS ...]]] [--dis]
+                [--extra [EXTRA_FINS [EXTRA_FINS ...]]] [--dis] [--mix]
                 [bunch [bunch ...]]
 
 Choose game and word bunches.
@@ -24,6 +24,7 @@ optional arguments:
                         Include arbitrarily named files, relative to
                         `essential-words` dir
   --dis                 Exclude all `essential-words-#.txt` files
+  --mix                 Mix primary word and synonyms
 $ python3 train.py --type choice -1 # -1 refers to bunches
 Press `Ctrl+C` to exit.
 

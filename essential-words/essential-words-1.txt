@@ -15,12 +15,12 @@ affable=καταδεκτικός=friendly,approachable,congenial
 affectation=επιτήδευση, προσποίηση=pretension,mannerism,pose
 aggrandize=μεγαλώνω=magnify,intensify
 aggregate=συναθροίζω=gather together,amount to
-alacrity=προθυμία=willingness,zeal,fervor
+alacrity=προθυμία, ταχύτητα=willingness,zeal,fervor
 alleviate=ανακουφίζω, καταπραϋνω=mitigate,soothe,assuage
 ambiguous=διφορούμενος=vague,indeterminate,equivocal
 ambivalence=αμφιθυμία=haze,uncertainty
 anoint=αλείφω, χρίω=rub,bless
-apocryphal=απόκρυφο=fictitious,counterfeit,spurious,equivocal
+apocryphal=ψεύτικος, πλαστός=fictitious,counterfeit,spurious
 arcane=απόκρυφο=obscure,secret
 arduous=επίπονος, κοπώδης=toilsome,strenuous
 articulate=σαφής, με καλή άρθρωση=fluent,lucid,eloquent

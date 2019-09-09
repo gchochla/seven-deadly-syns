@@ -41,44 +41,58 @@ parser.add_argument(
 parser.add_argument(
     '--dis', action='store_true', help='Exclude all `essential-words-#.txt` files'
 )
+parser.add_argument(
+    '--mix', action='store_true', help='Mix primary word and synonyms'
+)
 
 def pr_red(skk, **kwargs): print(f'\033[91m{skk}\033[00m', **kwargs) 
 def pr_green(skk, **kwargs): print(f'\033[92m{skk}\033[00m', **kwargs)
 def pr_yellow(skk, **kwargs): print(f'\033[93m{skk}\033[00m', **kwargs)
 
 def sample_from_iterable(it, k):
-    return (x for _, x in nlargest(k, ((random.random(), x) for x in it)))
+    return [x for _, x in nlargest(k, ((random.random(), x) for x in it))]
 
 def shuffle_iterable(it):
     return sample_from_iterable(it, len(it))
 
-def game(words, translation, type, **kwargs):
-    globals()[type](words, translation, **kwargs)
+def game(words, translations, type, **kwargs):
+    globals()[type](words, translations, **kwargs)
 
-def choice(words, translation, **kwargs):
+def choice(words, translations, **kwargs):
     synonyms_presented = 5
+    mix = kwargs['mix']
     total = 0
     correct = 0
     try:
         while True:
-            random_word = list(sample_from_iterable(words, 1))[0]
-            correct_synonym = list(sample_from_iterable(words[random_word], 1))[0]
+            init_random = sample_from_iterable(words, 1)[0]
+            if mix:
+                synonyms = shuffle_iterable([init_random] + words[init_random])
+                [random_word, correct_synonym] = synonyms[0:2]
+                translation = translations[init_random]
+                synonyms = synonyms[1:]
+            else:
+                random_word = init_random
+                correct_synonym = sample_from_iterable(words[init_random], 1)[0]
+                translation = translations[init_random]
+                synonyms = words[init_random]
+
             choices = [correct_synonym]
 
-            wrong_words = list(sample_from_iterable(words, synonyms_presented - 1))
+            wrong_words = sample_from_iterable(words, synonyms_presented - 1)
             for wrong_word in wrong_words:
-                while wrong_word == random_word:
-                    wrong_word = list(sample_from_iterable(words, 1))[0]
-                choices.append(list(sample_from_iterable(words[wrong_word], 1))[0])
+                while wrong_word == init_random:
+                    wrong_word = sample_from_iterable(words, 1)[0]
+                choices.append(sample_from_iterable(words[wrong_word], 1)[0])
             
-            choices = list(shuffle_iterable(choices))
+            choices = shuffle_iterable(choices)
 
             print(f'Choose synonym of ', end=''); pr_yellow(random_word, end=''); print(':')
             for i, choice in enumerate(choices):
                 print(f'{i}. {choice}')
 
             answer = -2
-            while answer not in list(range(synonyms_presented)):
+            while answer not in range(synonyms_presented):
                 if answer != -2:
                     print('Incorrect input. Try again :(')
                 try:
@@ -93,8 +107,8 @@ def choice(words, translation, **kwargs):
                 correct += 1
             else:
                 pr_red('Incorrect answer!')
-            pr_yellow(random_word, end=''); print(f'\'s translation is: {translation[random_word]}.')
-            pr_yellow(random_word, end=''); print(f'\'s possible synonyms are {", ".join(words[random_word])}.\n')
+            pr_yellow(random_word, end=''); print(f'\'s translation is: {translation}.')
+            pr_yellow(random_word, end=''); print(f'\'s possible synonyms are {", ".join(synonyms)}.\n')
 
     except KeyboardInterrupt:
         print('\b\b  ') # remove ^C from screen
@@ -116,7 +130,7 @@ def edit_distance(s1, s2):
         distances = distances_
     return distances[-1]
 
-def fill(words, translation, **kwargs):
+def fill(words, translations, **kwargs):
     edit_dst = kwargs['edit_dst']
     total = 0
     correct = 0
@@ -136,7 +150,7 @@ def fill(words, translation, **kwargs):
             if prev == correct:
                 pr_red('Wrong answer!')
 
-            pr_yellow(random_word, end=''); print(f'\'s translation is: {translation[random_word]}.')
+            pr_yellow(random_word, end=''); print(f'\'s translations is: {translations[random_word]}.')
             pr_yellow(random_word, end=''); print(f'\'s possible synonyms are {", ".join(words[random_word])}.\n')
 
     except KeyboardInterrupt:
@@ -147,7 +161,7 @@ def fill(words, translation, **kwargs):
 if __name__ == '__main__':
     args = parser.parse_args()
     words = {}
-    translation = {}
+    translations = {}
 
     if args.dis:
         bunches = []
@@ -160,9 +174,9 @@ if __name__ == '__main__':
             for line in txtf.readlines():
                 line = line.split('=')
                 words[line[0]] = line[2][:-1].split(',') # [:-1] to remove '\n'
-                translation[line[0]] = line[1]
+                translations[line[0]] = line[1]
     if len(words) == 0:
         raise ValueError('No words were found, try reading the help message (-h)') 
     print('Press `Ctrl+C` to exit.\n')
-    kwargs = {'edit_dst': args.edit_dst}
-    game(words, translation, args.type, **kwargs)
+    kwargs = {'edit_dst': args.edit_dst, 'mix': args.mix}
+    game(words, translations, args.type, **kwargs)
