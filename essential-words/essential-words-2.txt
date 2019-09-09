@@ -1,0 +1,55 @@
+artless=απλοϊκός, άτεχνος, αφελής=candid,guideless
+ascertain=διαπιστώνω, βεβαιώνω, εξακριβώνω=determine,verify,substantiate
+ascetic=ασκητικός=severe,austere,abstemious
+assuage=κατευνάζω, ανακουφίζω=alleviate,placate,soothe,mitigate
+audacious=παράτολμος, θρασύς, αυθάδης=impudent,presumptuous
+augment=αυξάνω=amplify,heighten
+aver=ισχυρίζομαι, διατείνομαι=declare,allege,avow
+balk=εμποδίζω, διστάζω, δειλιάζω=hesitate,dodge,evade,circumvent
+base=ποταπός, ευτελής=disgraceful,despicable
+belie=διαψεύδω=deny,conceal,refute,confute,repudiate,gainsay
+benign=πράος, ευγενικός, ευμενής (καιρός), καλοήθης (όγκος)=amiable,benevolent
+bogus=κίβδηλος, πλαστός=counterfeit,spurious,phony
+bolster=υποστηρίζω, ενισχύω (θεωρία)=reinforce,buttress,strengthen,substantiate
+boorish=άξεστος=lout,vulgar
+burgeon=επεκτείνομαι, αναπτύσσομαι γρήγορα=flourish,thrive,sprout
+buttress=υποστηρίζω, ενδυναμώνω=strengthen,back up,bulwark
+bygone=παλαιός, περασμένος=one-time,erstwhile,antiquated
+candid=ευθύς, ειλικρινής=straight,direct,impartial
+canonical=κανονικός=regular,orderly
+capricious=ιδιότροπος, άστατος=mercurial,volatile,inconsistent
+castigate=τιμωρώ, επιπλήττω=chasten,chastice
+catalyst=καταλύτης=impetus,incentive
+caustic=καυστικός, δηκτικός=acrimonious,poignant
+censure=μομφή, επίκριση=reproach,decry,rebuke,reprimand
+chauvinism=σωβινισμός=nationalism
+clamor=κραυγή, βοή, κραυγάζω=outcry,yell
+clinch=σταθεροποιώ (καρφί), κλείνω (συμφωνία, δουλειά)=squeeze,grapple,embrace
+coalesce=ενώνομαι, συνασπίζομαι=confederate,league
+cogent=πειστικός, αδιάσειστος=irrefutable,compelling
+commensurate=ανάλογος=analogous,proportionate
+complacent=αυτάρεσκος, ικανοποιημένος (δεν προσπαθεί περαιτέρω)=content,smug
+concede=παραδέχομαι=admit,confess,acknowledge
+conciliatory=διαλλακτικός, συμφιλιωτικός=resilient,placatory
+concur=συμφωνώ, συμπίπτω=collaborate,acquiesce
+condone=συγχωρώ, παραβλέπω=overlook,disregard
+confer=συνδιασκέπτομαι, χορηγώ=consult,converse,grant,bestow
+connoisseur=ειδήμονας, γνώστης=expert,cognoscente
+console=παρηγορώ=comfort,solace,assuage
+consolidate=σταθεροποιώ, εδραιώνω, ενοποιώ=stabilize,integrate,unify
+constrict=σφίγγω, περιορίζω=restrain,confine
+construe=ερμηνεύω=interpret,expound
+contentious=αμφισβητήσιμος, φιλόνικος=questionable,disputatious,scrappy,argumentative
+conundrum=αίνιγμα=riddle,enigma,mystery
+converge=συγκλίνω=gather,merge,coincide,mingle,intersect
+conversant=εντριβής,γνώστης,ενήμερος=acquainted (with),versed,connoisseur
+convoluted=σπειροειδής,δυσνόητος,μπερδεμένος=turtuous,elaborate,intricate,involved
+copious=άφθονος, πλούσιος, παραγωγικός (για συγγραφέα)=bountiful,abundant,profuce,replete
+corroborate=ενισχύω (μια ιδέα, άποψη) με νέα στοιχεία, επιβεβαιώνω=substantiate,bolster,buttress
+countenance=υποστηρίζω, επιδοκιμάζω, εγκρίνω=advocate,abet
+counterintuitive=αντιφατικό (διαισθητικά)=fortuitous
+covert=συγκαλυμμένος=concealed,surreptitious
+craven=δειλός, άναδρος=pusillanimous,timorous,diffident,cowardly
+credulous=εύπιστος=gullible,naive
+crescendo=βαθμιαία αύξηση=pinnacle
+culminate=κορυφώνομαι, μεσουρανώ=climax,terminate,come to a head
