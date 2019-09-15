@@ -1,0 +1,4 @@
+abdicate=παραιτούμαι (δικαιωμάτων)=resign,quit,forsake,waive
+abjure=αποκηρύσσω, απαρνούμαι=renounce,repudiate,recant
+admonish=επιπλήττω, νουθετώ=scold,reprimand,rebuke,berate
+arduous=επίπονος, κοπώδης=toilsome,strenuous
