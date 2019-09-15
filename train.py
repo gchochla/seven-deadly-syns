@@ -6,7 +6,7 @@ from heapq import nlargest
 
 random.seed(None)
 
-LEVELS = ['choice', 'fill']
+LEVELS = ['choice', 'fill', 'fill_all']
 
 def get_default_bunches():
     bunches = []
@@ -64,6 +64,7 @@ def choice(words, translations, **kwargs):
     mix = kwargs['mix']
     total = 0
     correct = 0
+    max_len = 0
     try:
         while True:
             init_random = sample_from_iterable(words, 1)[0]
@@ -158,6 +159,50 @@ def fill(words, translations, **kwargs):
                     break
             if prev == correct:
                 print(red('Wrong answer!'))
+
+            print(f'{yellow(random_word)}\'s translation are: {translations[random_word]}.')
+            print(f'{yellow(random_word)}\'s possible synonyms are {", ".join(words[random_word])}.\n')
+
+    except KeyboardInterrupt:
+        print('\b\b  ') # remove ^C from screen
+        print(f'\n\nResult: {correct} / {total}')
+        print('Exiting...')
+
+def fill_all(words, translations, **kwargs):
+    edit_dst = kwargs['edit_dst']
+    total = 0
+    correct = 0
+    max_len = 0
+    try:
+        while True:
+            random_word = list(sample_from_iterable(words, 1))[0]
+            question = f'Write all the synonyms of {yellow(random_word)} (separated by comma):'
+            max_len = max_len if max_len > len(question) - 10 else len(question) - 10
+            print('\n' + purple('$' * max_len) + '\n')
+            print(question)
+            synonyms = words[random_word]
+            answers = input('Answer: ').split(',')
+            answers = [answer.strip() for answer in answers]
+            while True:
+                if len(answers) <= len(synonyms):
+                    break
+                print(f'Number of correct synonyms: {len(synonyms)}. Try again!')
+                answers = input('Answer: ').split(',')
+
+            print()
+            total += 1
+            count = 0
+            for synonym in synonyms:
+                for answer in answers:
+                    if edit_distance(synonym, answer) <= edit_dst:
+                        count += 1
+                        break
+
+            if count < len(synonyms):
+                print(f'{red("You got")} {count} {red("correct")}.')
+            else:
+                print(green('Correct answers!'))
+                correct += 1
 
             print(f'{yellow(random_word)}\'s translation are: {translations[random_word]}.')
             print(f'{yellow(random_word)}\'s possible synonyms are {", ".join(synonyms)}.')
