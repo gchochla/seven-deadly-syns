@@ -6,7 +6,7 @@ Simple gamified training to help memorize GRE essential words.
 
 ```bash
 $ python3 train.py -h
-usage: train.py [-h] [--type {choice,fill}] [--edit EDIT_DST]
+usage: train.py [-h] [--type {choice,fill,fill_all}] [--edit EDIT_DST]
                 [--extra [EXTRA_FINS [EXTRA_FINS ...]]] [--dis] [--mix]
                 [bunch [bunch ...]]
 
@@ -18,7 +18,8 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --type {choice,fill}  Choose type of game. Default: fill blanks
+  --type {choice,fill,fill_all}
+                        Choose type of game. Default: type all synonyms
   --edit EDIT_DST       Edit distance to be forgiven. Default: 2
   --extra [EXTRA_FINS [EXTRA_FINS ...]]
                         Include arbitrarily named files, relative to
@@ -26,16 +27,19 @@ optional arguments:
   --dis                 Exclude all `essential-words-#.txt` files
   --mix                 Mix primary word and synonyms
 $ python3 train.py --type choice -1 # -1 refers to bunches
+
 Press `Ctrl+C` to exit.
 
-Choose synonym of `alleviate`:
-0. secret
-1. soothe
-2. repudiate
-3. equivocal
-4. reduce
+$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-Answer:
+Choose synonym of converge:
+0. mingle
+1. profuce
+2. abet
+3. connoisseur
+4. enigma
+
+Answer: 
 ```
 
 ## Extensions

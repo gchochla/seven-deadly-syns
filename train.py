@@ -28,7 +28,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--type', type=str, default=LEVELS[-1], choices=LEVELS,
-    help='Choose type of game. Default: fill blanks'
+    help='Choose type of game. Default: type all synonyms'
 )
 parser.add_argument(
     '--edit', dest='edit_dst', type=int, default=2,
