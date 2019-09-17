@@ -10,8 +10,8 @@ LEVELS = ['choice', 'fill', 'fill_all']
 
 def get_default_bunches():
     bunches = []
-    txtre = re.compile(r'essential-words-\d+.txt')
-    for (dirpath, dirnames, filenames) in walk('./essential-words'):
+    txtre = re.compile(r'words-\d+.txt')
+    for (dirpath, dirnames, filenames) in walk('./words'):
         for filename in filenames:
             mo = txtre.search(filename)
             if mo:
@@ -23,7 +23,7 @@ BUNCHES = get_default_bunches()
 parser = argparse.ArgumentParser(description='Choose game and word bunches.')
 parser.add_argument(
     'bunches', metavar='bunch', type=int, nargs='*', default=BUNCHES,
-    help='Choose `essential-words-{bunch}.txt` files to incorporate. Include -1 for last.' + \
+    help='Choose `words/words-{bunch}.txt` files to incorporate. Include -1 for last.' + \
     ' Default: all'
 )
 parser.add_argument(
@@ -36,10 +36,10 @@ parser.add_argument(
 )
 parser.add_argument(
     '--extra', dest='extra_fins', type=str, nargs='*', default=[],
-    help='Include arbitrarily named files, relative to `essential-words` dir'
+    help='Include arbitrarily named files, relative to `words` dir'
 )
 parser.add_argument(
-    '--dis', action='store_true', help='Exclude all `essential-words-#.txt` files'
+    '--dis', action='store_true', help='Exclude all `words-#.txt` files'
 )
 parser.add_argument(
     '--mix', action='store_true', help='Mix primary word and synonyms'
@@ -222,8 +222,8 @@ if __name__ == '__main__':
     else:
         bunches = args.bunches
 
-    for txt in [f'essential-words/essential-words-{i if i != -1 else BUNCHES[-1]}.txt' for i in bunches] \
-        + [f'essential-words/{fin}' for fin in args.extra_fins]:
+    for txt in [f'words/words-{i if i != -1 else BUNCHES[-1]}.txt' for i in bunches] \
+        + [f'words/{fin}' for fin in args.extra_fins]:
         with open(txt) as txtf:
             for line in txtf.readlines():
                 line = line.split('=')
