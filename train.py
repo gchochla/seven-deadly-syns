@@ -227,7 +227,7 @@ if __name__ == '__main__':
         with open(txt) as txtf:
             for line in txtf.readlines():
                 line = line.split('=')
-                words[line[0]] = line[2][:-1].split(',') # [:-1] to remove '\n'
+                words[line[0]] = line[2].strip().split(',')
                 translations[line[0]] = line[1]
     if len(words) == 0:
         raise ValueError('No words were found, try reading the help message (-h)') 
