@@ -17,7 +17,7 @@ buttress=υποστηρίζω, ενδυναμώνω=strengthen,back up,bulwark
 bygone=παλαιός, περασμένος=one-time,erstwhile,antiquated
 candid=ευθύς, ειλικρινής=straight,direct,impartial
 canonical=κανονικός=regular,orderly
-capricious=ιδιότροπος, άστατος=mercurial,volatile,inconsistent
+capricious=ιδιότροπος, άστατος=mercurial,volatile,inconsistent,fanciful,whimsical
 castigate=τιμωρώ, επιπλήττω=chasten,chastice
 catalyst=καταλύτης=impetus,incentive
 caustic=καυστικός, δηκτικός=acrimonious,poignant

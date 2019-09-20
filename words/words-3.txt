@@ -18,7 +18,7 @@ conundrum=αίνιγμα=riddle,enigma,mystery
 converge=συγκλίνω=gather,merge,coincide,mingle,intersect
 conversant=εντριβής,γνώστης,ενήμερος=acquainted (with),versed,connoisseur
 convoluted=σπειροειδής,δυσνόητος,μπερδεμένος=turtuous,elaborate,intricate,involved
-copious=άφθονος, πλούσιος, παραγωγικός (για συγγραφέα)=bountiful,abundant,profuce,replete
+copious=άφθονος, πλούσιος, παραγωγικός (για συγγραφέα)=bountiful,abundant,profuce,replete,ample
 corroborate=ενισχύω (μια ιδέα, άποψη) με νέα στοιχεία, επιβεβαιώνω=substantiate,bolster,buttress
 countenance=υποστηρίζω, επιδοκιμάζω, εγκρίνω=advocate,abet
 counterintuitive=αντιφατικό (διαισθητικά)=fortuitous
