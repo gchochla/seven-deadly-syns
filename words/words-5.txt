@@ -1,0 +1,25 @@
+eclectic=εκλεκτικός=varied,manifold
+efficacy=αποτελεσματικότητα=vigor,potency
+egalitarian=υποστηρικτής της ισότητας=equable,equitable,just
+egregious=διαβόητος, κακός=flagrant,distinguished
+elated=περήφανος, επηρμένος (από χαρά)=exhilarated,jubilant,exultant,joyous
+elevate=εξυψώ πνευματικά, προάγω, προβιβάζω σε αξίωμα=advance,upgrade,exalt
+elicit=αποσπώ, εκμαιεύω=extract,educe,derive,deduce
+eloquent=εύγλωττος, ευφράδης=articulate,silver-tongued
+embellish=στολίζω, εξωραϊζω=adorn,bedizen (in a vulgar way)
+eminent=εξέχων, διακεκριμένος=outstanding,conspicuous,celebrated,renowned
+emulate=αμιλλώμαι,μιμούμαι=replicate,echo
+enervate=εξασθενίζω, εξαντλώ, αποχαυνώνω=enfeeble,debilitate,sap,exhaust
+enumerate=απαριθμώ=calculate,compute
+equitable=δίκαιος=impartial,even-handed
+erratic=ακανόνιστος, άστατος, αναξιόπιστος=abnormal,inconsistent,desultory
+erudite=ευρυμαθής, σοφός=scholarly
+eschew=αποφεύγω, απέχω=avoid,circumvent,forgo
+estimable=εκτιμητέο=valued,esteemed,meritorious
+eulogy=εγκώμιο, πανηγυρικός=panegyric,tribute,acclaim
+exacerbate=χειροτερεύω, επιτείνω=worsen,aggravate,irritate,enrage
+exacting=απαιτητικός, κουραστικός=painstaking,laborious,toilsome
+exulpate=αθωώνω, δικαιώνω=acquit,vindicate,exonerate
+exponent=υποστηρικτής, υπέρμαχος=advocate,partisan,indicator
+extraneous=εξωτερικός, άσχετος=peripheral,superfluous
+extrapolate=εικάζω (από τα ήδη υπάρχοντα στοιχεία)=estimate,conjecture

@@ -1,0 +1,31 @@
+daunt=αποθαρρύνω=dishearten,discountenance
+debase=υποτιμώ, εξευτελίζω=vilify,degrade,demean,derogate
+debunk=απομυθοποιώ, ξεσκεπάζω=demystify,ridicule
+decorous=ευπρεπής, κόσμιος=decent,seemly
+deface=παραμορφώνω=contort,disfigure
+default=αθετώ, ερημοδικώ=abrogate,breach
+deference=σεβασμός (προς τις απόψεις τρίτων), συμμόρφωση (στις συμβουλές)=veneration,coutresy,esteem
+deflect=παρεκκλίνω=deviate
+deleterious=επιβλαβής=harmful,detrimental,noxious,damaging,injurious
+delineate=σκιαγραφώ, περιγράφω=depict (in words),circumscribe,adumbrate
+denigrate=δυσφημώ=disparage,vilify,libel
+denote=υποδηλώνω=imply,connote
+deride=χλευάζω=taunt,gibe,flout
+desiccate=ξηραίνω=blight,evaporate
+deterrent=προληπτικός, αναχαιτιστικός=preventive,superstitious,precautionary
+diatribe=λίβελλος=tirade,denunciation,reviling,harangue
+digress=εκτρέπομαι=deviate,stray,veer
+discrepancy=ασυμφωνία, διαφορά=inconsistency,disparity,variance,divergence,dissonance,incongruity
+disingenious=ανειλικρινής=insidious,deceitful,duplicitous,guileful
+dispassionate=ψύχραιμος,απαθής,αμερόληπτος=moderate,serene,temperate,impartial,unbiased
+disperse=διασκορπίζω=disseminate,scatter,dispel,dissipate
+disposition=διάθεση=temper,spirit,inclination
+disquieting=ανησυχητικός=disturbing,irritating,unnerving,vexing,perturbing
+disseminate=διαδίδω, διασπείρω=spread,disseminate,propagate,diffuse
+dissent=διαφωνία,αντιγνωμία=objection,discord,demur,dissension
+dissonance=παραφωνία=discord,cacophony
+distill=αποστάζω,βγάζω την ουσία=ferment,purify
+diverge=απομακρύνομαι, διχάζομαι=dissent,divide,digress
+divest=αφαιρώ, στερώ, απογυμνώνω=deprive,strip
+dormant=λανθάνων, αδρανής=inert, latent
+dubious=αμφίβολος, ασαφής=ambiguous,equivocal,unfathomable
