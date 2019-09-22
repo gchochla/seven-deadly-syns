@@ -1,4 +1,4 @@
-artless=απλοϊκός, άτεχνος, αφελής=candid,guideless
+artless=απλοϊκός, άτεχνος, αφελής=candid,guileless
 ascertain=διαπιστώνω, βεβαιώνω, εξακριβώνω=determine,verify,substantiate
 ascetic=ασκητικός=severe,austere,abstemious
 assuage=κατευνάζω, ανακουφίζω=alleviate,placate,soothe,mitigate
